@@ -45,15 +45,21 @@ public class AndroidMeActivity extends AppCompatActivity {
             // TODO (5) Create a new BodyPartFragment instance and display it using the FragmentManager
             BodyPartFragment headFragment = new BodyPartFragment();
             headFragment.setImageIDs(AndroidImageAssets.getHeads());
-            headFragment.setImageIndex(0);
+
+            int headIndex = getIntent().getIntExtra("headIndex", 0);
+            headFragment.setImageIndex(headIndex);
 
             BodyPartFragment bodyFragment = new BodyPartFragment();
             bodyFragment.setImageIDs(AndroidImageAssets.getBodies());
-            bodyFragment.setImageIndex(0);
+
+            int bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
+            bodyFragment.setImageIndex(bodyIndex);
 
             BodyPartFragment legFragment = new BodyPartFragment();
             legFragment.setImageIDs(AndroidImageAssets.getLegs());
-            legFragment.setImageIndex(0);
+
+            int legIndex = getIntent().getIntExtra("legIndex", 0);
+            legFragment.setImageIndex(legIndex);
 
             FragmentManager fragmentManager = getSupportFragmentManager();
 
